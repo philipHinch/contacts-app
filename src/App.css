@@ -1,38 +1,238 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+/* buttons */
+.btn {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  font-size: 1.4rem !important;
+  padding: 10px 20px;
+  /* padding-right: 10px; */
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: rgb(203, 251, 222);
+  color: #666;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  text-transform: uppercase;
+}
+.btn:hover {
+  border-color: #666;
+}
+.buttons-container {
+  text-align: center;
+}
+.add-btn {
+  display: inline-block;
+  margin: 0px auto;
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.close-btn {
+  display: inline-block;
+  margin: 0px auto;
+  font-size: 1.4rem;
+  color: #666;
+  background-color: white;
+}
+/* icons */
+.header-icon {
+  font-size: 3rem;
+  margin-right: 10px;
+}
+.plus-icon {
+  margin-left: 5px;
+  font-size: 2rem;
+}
+.user-avatar {
+  font-size: 2rem;
+}
+.close-icon {
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.close-icon:hover {
+  opacity: 0.6;
+}
+.add-contact-avatar {
+  top: 5px;
+  left: 5px;
+  font-size: 3.5rem;
+  color: #666;
+}
+.contact-type-container {
+  display: flex;
+}
+.contact-type {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: white;
+  color: #ccc;
+  border-radius: 50%;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  transition: border-color, color 0.2s ease;
+}
+.contact-type:hover {
+  color: #666;
+  border-color: #666;
+}
+/* header */
+header {
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  background-color: bisque;
+  border-bottom: 1px solid #666;
+}
+.header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* search form */
+.search-input-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 20px;
+  padding-top: 30px;
+}
+#search-input {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  width: 50%;
+  color: #666;
+  letter-spacing: 2px;
+  outline: none;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+#search-input::-webkit-input-placeholder {
+  /* opacity: 0.5; */
+  color: #ccc;
+}
+#search-input:hover {
+  border-color: #666;
+}
+#search-input:focus {
+  border-color: #666;
+}
+/* add contact form */
+.add-contact-form-container {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.add-contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+  background-color: #eee;
+}
+.add-contact-form input {
+  font-size: 1.2rem;
+  padding: 6px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+.add-contact-form label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.add-contact-form input:focus {
+  border-color: #666;
+}
+input[type="number"] {
+  background-color: white;
+}
+.sex-container {
+  margin-top: 20px;
+}
+.sex-container input {
+  margin: 0 10px;
+}
+.color-choice-container {
+  display: flex;
+  margin: 40px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.color-choice {
+  border-radius: 50%;
+  margin: 5px;
+  border: 1px solid #666;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-choice:hover {
+  transform: scale(1.1);
+}
+/* contact list */
+.total-contacts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  letter-spacing: 1px;
+  color: #666;
+}
+.total-contacts-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.contact-list {
+  padding: 20px;
+}
+li {
+  background-color: #eee;
+  padding: 10px 40px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: padding 0.1s ease;
+  cursor: pointer;
+}
+li:hover {
+  padding: 20px 40px;
+  border: 1px solid #666;
+}
+/* footer */
+footer {
+  width: 100%;
+  padding: 60px;
+  padding-bottom: 20px;
+  letter-spacing: 1px;
+  color: #666;
+  text-align: center;
+}
+footer a {
+  color: #666;
+  text-decoration: none;
+}
+footer a:hover {
+  color: black;
 }
