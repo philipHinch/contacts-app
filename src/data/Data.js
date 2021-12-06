@@ -1,5 +1,6 @@
 let contacts = [
     {
+        id: 1,
         firstName: 'john',
         lastName: 'doe',
         phone: '035229128',
@@ -9,6 +10,7 @@ let contacts = [
         contactType: 'home'
     },
     {
+        id: 2,
         firstName: 'silvia',
         lastName: 'dansbury',
         phone: '012029128',
@@ -18,6 +20,7 @@ let contacts = [
         contactType: 'home'
     },
     {
+        id: 3,
         firstName: 'abigail',
         lastName: 'anderson',
         phone: '0259118156',
@@ -27,6 +30,8 @@ let contacts = [
         contactType: 'mobile'
     },
     {
+
+        id: 4,
         firstName: 'mark',
         lastName: 'phillips',
         phone: '0326219671',

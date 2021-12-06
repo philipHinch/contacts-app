@@ -52,6 +52,7 @@
 }
 .user-avatar {
   font-size: 2rem;
+  color: #666;
 }
 .close-icon {
   font-size: 1.6rem;
@@ -60,6 +61,7 @@
 }
 .close-icon:hover {
   opacity: 0.6;
+  color: crimson;
 }
 .add-contact-avatar {
   top: 5px;
@@ -88,6 +90,10 @@
 .contact-type:hover {
   color: #666;
   border-color: #666;
+}
+.contact-type-icon {
+  font-size: 2rem;
+  color: #666;
 }
 /* header */
 header {
@@ -205,6 +211,7 @@ input[type="number"] {
 .contact-list {
   padding: 20px;
 }
+/* list item */
 li {
   background-color: #eee;
   padding: 10px 40px;
@@ -214,11 +221,34 @@ li {
   align-items: center;
   font-size: 1rem;
   transition: padding 0.1s ease;
-  cursor: pointer;
 }
-li:hover {
+/* li:hover {
   padding: 20px 40px;
   border: 1px solid #666;
+} */
+
+li span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  height: 50px;
+}
+.li-icons-container {
+  min-width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-li {
+  background-color: transparent;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0;
+}
+.info {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 /* footer */
 footer {
