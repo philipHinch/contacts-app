@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/philipHinch/contacts-app/static/css/main.f7359515.chunk.css",
+    "main.js": "/philipHinch/contacts-app/static/js/main.2ca232c5.chunk.js",
+    "main.js.map": "/philipHinch/contacts-app/static/js/main.2ca232c5.chunk.js.map",
+    "runtime-main.js": "/philipHinch/contacts-app/static/js/runtime-main.cfa55783.js",
+    "runtime-main.js.map": "/philipHinch/contacts-app/static/js/runtime-main.cfa55783.js.map",
+    "static/js/2.c8f6d855.chunk.js": "/philipHinch/contacts-app/static/js/2.c8f6d855.chunk.js",
+    "static/js/2.c8f6d855.chunk.js.map": "/philipHinch/contacts-app/static/js/2.c8f6d855.chunk.js.map",
+    "index.html": "/philipHinch/contacts-app/index.html",
+    "static/css/main.f7359515.chunk.css.map": "/philipHinch/contacts-app/static/css/main.f7359515.chunk.css.map",
+    "static/js/2.c8f6d855.chunk.js.LICENSE.txt": "/philipHinch/contacts-app/static/js/2.c8f6d855.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cfa55783.js",
+    "static/js/2.c8f6d855.chunk.js",
+    "static/css/main.f7359515.chunk.css",
+    "static/js/main.2ca232c5.chunk.js"
+  ]
+}
