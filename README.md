@@ -34,6 +34,11 @@ In the project directory, you can run:
 
 ![This is an image](./src/assets/preview2.png)
 
+---
+
+[View Project](https://my-contacts-appp.herokuapp.com/)
+
+
 
 
 
