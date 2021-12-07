@@ -14,7 +14,6 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
     const [avatarColor, setAvatarColor] = useState('')
     const [contactType, setContactType] = useState('')
 
-
     const handleSubmit = (e) => {
         e.preventDefault()
         setUserFormVisible(false)
@@ -26,13 +25,16 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
 
 
     const handleContactTypeClick = (e) => {
-        if (e.target.id) {
-            setContactType(e.target.id)
-        } else if (e.target.id) {
-            setContactType(e.target.parentElement.id)
-        } else if (e.target.parentElement.parentElement.id) {
-            setContactType(e.target.parentElement.parentElement.id)
+        if (e.target.value) {
+            setContactType(e.target.value)
         }
+        // if (e.target.id) {
+        //     setContactType(e.target.id)
+        // } else if (e.target.parentElement.id) {
+        //     setContactType(e.target.parentElement.id)
+        // } else if (e.target.parentElement.parentElement.id) {
+        //     setContactType(e.target.parentElement.parentElement.id)
+        // }
     }
 
 
@@ -41,15 +43,36 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
         <div className="add-contact-form-container">
             <form className="add-contact-form" onSubmit={handleSubmit}>
                 <Icon icon="mdi:account-circle" className="user-avatar add-contact-avatar" style={{ color: avatarColor }} />
-                <div className="contact-type-container">
-                    <div className="contact-type" id="home-contact" title="Home" value="home" onClick={(e) => handleContactTypeClick(e)}><Icon icon="mdi:home-outline" />
+                <div className="contact-type-container icon-thread">
+                    <div className="contact-type" id="home-contact" title="Home">
+                        <input
+                            type="radio"
+                            name="optionsRadios"
+                            id="optionsRadios1"
+                            value="home-contact"
+                            onClick={(e) => handleContactTypeClick(e)} />
+                        <label htmlFor="optionsRadios1" className="radio"><Icon icon="mdi:home-outline" /></label>
                     </div>
-                    <div className="contact-type" id="mobile-contact" title="Mobile" value="mobile" onClick={(e) => handleContactTypeClick(e)}><Icon icon="mdi:cellphone" />
+                    <div className="contact-type" id="mobile-contact" title="Mobile">
+                        <input
+                            type="radio"
+                            name="optionsRadios"
+                            id="optionsRadios2"
+                            value="mobile-contact"
+                            onClick={(e) => handleContactTypeClick(e)} />
+                        <label htmlFor="optionsRadios2" className="radio"><Icon icon="mdi:cellphone" /></label>
                     </div>
-                    <div className="contact-type" id="work-contact" title="Work" value="work" onClick={(e) => handleContactTypeClick(e)}><Icon icon="mdi:briefcase-outline" />
+                    <div className="contact-type" id="work-contact" title="Work">
+                        <input
+                            type="radio"
+                            name="optionsRadios"
+                            id="optionsRadios3"
+                            value="work-contact"
+                            onClick={(e) => handleContactTypeClick(e)} />
+                        <label htmlFor="optionsRadios3" className="radio"><Icon icon="mdi:briefcase-outline" /></label>
                     </div>
                 </div>
-                <label htmlFor="fisrt-name-input">First Name:</label>
+                <label htmlFor="fisrt-name-input">First Name: </label>
                 <input
                     type="text"
                     id="first-name-input"
@@ -58,20 +81,20 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                 />
-                <label htmlFor="last-name-input">Last Name:</label>
+                <label htmlFor="last-name-input">Last Name: </label>
                 <input
                     type="text"
                     id="last-name-input"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)} />
-                <label htmlFor="phone-number-input">Phone Number:</label>
+                <label htmlFor="phone-number-input">Phone Number: </label>
                 <input
                     type="number"
                     id="phone-number-input"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                 />
-                <label htmlFor="email-input">Email Address:</label>
+                <label htmlFor="email-input">Email Address: </label>
                 <input
                     type="email"
                     id="email-input"
@@ -113,7 +136,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                     <Button buttonText={'Close'} className={'close-btn btn'} setUserFormVisible={setUserFormVisible} />
                 </div>
             </form>
-        </div>
+        </div >
     );
 }
 

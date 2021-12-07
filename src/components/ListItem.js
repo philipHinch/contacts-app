@@ -1,11 +1,14 @@
 import { Icon } from "@iconify/react";
 
+const ListItem = ({ avatarColor, contactType, firstName, lastName, email, phoneNumber, sex, id, contacts, setContacts }) => {
 
-const ListItem = ({ avatarColor, contactType, firstName, lastName, email, phoneNumber, sex, id }) => {
-
-    const handleClick = (e) => {
-        console.log(e.target);
+    const handleDelete = (e) => {
+        let index = +e.target.parentElement.parentElement.id || +e.target.parentElement.parentElement.parentElement.id
+        const newContacts = contacts.filter((contact) => contact.id !== index)
+        setContacts(newContacts)
+        localStorage.setItem('contacts', JSON.stringify(newContacts))
     }
+
 
     let icon
     let title
@@ -33,7 +36,7 @@ const ListItem = ({ avatarColor, contactType, firstName, lastName, email, phoneN
             <div className="li-phone-number col col-5" title="Phone">{phoneNumber}</div>
             <div className="li-sex col col-6" title="Sex">{sex}</div>
 
-            <div className="li-close-icon col col-7" onClick={(e) => handleClick(e)}><Icon icon="mdi:close-thick" className="close-icon" /></div>
+            <div className="li-close-icon col col-7" ><Icon icon="mdi:close-thick" className="close-icon" onClick={(e) => handleDelete(e)} /></div>
         </li>
 
     );

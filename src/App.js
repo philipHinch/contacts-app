@@ -14,7 +14,6 @@ function App() {
     localStorage.setItem('contacts', JSON.stringify(contacts))
   }, [contacts])
 
-
   return (
     <div className="App">
       <Header />

@@ -17,6 +17,7 @@ const ContactList = ({ contacts, setContacts }) => {
                     <div className="col col-6">Sex</div>
                     <div className="col col-7" ></div>
                 </li>
+                {contacts.length === 0 && <div className="no-contacts-div">NO CONTACTS</div>}
                 {contacts && contacts.map(contact => (
                     <ListItem key={Math.random()} id={contact.id} avatarColor={contact.avatarColor} contactType={contact.contactType} firstName={contact.firstName} lastName={contact.lastName} email={contact.email} sex={contact.sex} phoneNumber={contact.phoneNumber} contacts={contacts} setContacts={setContacts} />
                 ))}
