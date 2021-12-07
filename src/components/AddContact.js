@@ -14,33 +14,34 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
     const [sex, setSex] = useState('')
     const [avatarColor, setAvatarColor] = useState('')
     const [contactType, setContactType] = useState('')
-    const id = contacts.length + 1
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setUserFormVisible(false)
-        setContacts(prevContacts => [...prevContacts, { firstName, lastName, phoneNumber, email, sex, avatarColor, contactType, id }])
+        const id = contacts && contacts.length
+        const newContact = { firstName, lastName, phoneNumber, email, sex, avatarColor, contactType, id }
+        const contactList = [...contacts, newContact]
+        setContacts(contactList)
     }
-
-    useEffect(() => {
-        console.log(contacts);
-    }, [contacts])
 
 
     const handleContactTypeClick = (e) => {
         if (e.target.id) {
             setContactType(e.target.id)
-        } else if (e.target.parentElement.id) {
+        } else if (e.target.id) {
             setContactType(e.target.parentElement.id)
         } else if (e.target.parentElement.parentElement.id) {
             setContactType(e.target.parentElement.parentElement.id)
         }
     }
 
+
+
     return (
         <div className="add-contact-form-container">
             <form className="add-contact-form" onSubmit={handleSubmit}>
-                <Icon icon="mdi:account-circle" className="user-avatar add-contact-avatar" />
+                <Icon icon="mdi:account-circle" className="user-avatar add-contact-avatar" style={{ color: avatarColor }} />
                 <div className="contact-type-container">
                     <div className="contact-type" id="home-contact" title="Home" value="home" onClick={(e) => handleContactTypeClick(e)}><Icon icon="mdi:home-outline" />
                     </div>

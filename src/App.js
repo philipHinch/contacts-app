@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 import './App.css';
 import AddContact from './components/AddContact';
 import ContactList from './components/ContactList';
@@ -8,8 +9,11 @@ import SearchInput from './components/SearchInput';
 function App() {
 
   const [userFormVisible, setUserFormVisible] = useState(false)
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) || [])
 
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts))
+  }, [contacts])
 
 
   return (
