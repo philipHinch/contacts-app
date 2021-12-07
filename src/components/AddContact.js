@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../UI/Button";
 
 const avatarColors = ['crimson', 'steelblue', 'hotpink', 'rebeccapurple', 'forestgreen', 'goldenrod']
@@ -13,6 +13,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
     const [sex, setSex] = useState('')
     const [avatarColor, setAvatarColor] = useState('')
     const [contactType, setContactType] = useState('')
+    const [colorAlert, setColorAlert] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,20 +24,22 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
         setContacts(contactList)
     }
 
-
     const handleContactTypeClick = (e) => {
         if (e.target.value) {
             setContactType(e.target.value)
         }
-        // if (e.target.id) {
-        //     setContactType(e.target.id)
-        // } else if (e.target.parentElement.id) {
-        //     setContactType(e.target.parentElement.id)
-        // } else if (e.target.parentElement.parentElement.id) {
-        //     setContactType(e.target.parentElement.parentElement.id)
-        // }
     }
 
+    const showColorAlert = () => {
+        setColorAlert(true)
+        setTimeout(() => {
+            setColorAlert(false)
+        }, 2000)
+    }
+
+    useEffect(() => {
+        showColorAlert()
+    }, [avatarColor])
 
 
     return (
@@ -51,7 +54,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                             id="optionsRadios1"
                             value="home-contact"
                             onClick={(e) => handleContactTypeClick(e)} />
-                        <label htmlFor="optionsRadios1" className="radio"><Icon icon="mdi:home-outline" /></label>
+                        <label htmlFor="optionsRadios1" className="radio"><Icon icon="mdi:home-outline" className='contact-icon' /></label>
                     </div>
                     <div className="contact-type" id="mobile-contact" title="Mobile">
                         <input
@@ -60,7 +63,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                             id="optionsRadios2"
                             value="mobile-contact"
                             onClick={(e) => handleContactTypeClick(e)} />
-                        <label htmlFor="optionsRadios2" className="radio"><Icon icon="mdi:cellphone" /></label>
+                        <label htmlFor="optionsRadios2" className="radio"><Icon icon="mdi:cellphone" className='contact-icon' /></label>
                     </div>
                     <div className="contact-type" id="work-contact" title="Work">
                         <input
@@ -69,7 +72,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                             id="optionsRadios3"
                             value="work-contact"
                             onClick={(e) => handleContactTypeClick(e)} />
-                        <label htmlFor="optionsRadios3" className="radio"><Icon icon="mdi:briefcase-outline" /></label>
+                        <label htmlFor="optionsRadios3" className="radio"><Icon icon="mdi:briefcase-outline" className='contact-icon' /></label>
                     </div>
                 </div>
                 <label htmlFor="fisrt-name-input">First Name: </label>
@@ -105,21 +108,21 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                         type="radio"
                         name="sex"
                         id="sex-input-male"
-                        value="male"
+                        value="Male"
                         onClick={(e) => setSex(e.target.value)} />
                     <label htmlFor="sex-input-male">Male</label>
                     <input
                         type="radio"
                         name="sex"
                         id="sex-input-female"
-                        value="female"
+                        value="Female"
                         onClick={(e) => setSex(e.target.value)} />
                     <label htmlFor="sex-input-female">Female</label>
                     <input
                         type="radio"
                         name="sex"
                         id="sex-input-other"
-                        value="other"
+                        value="Other"
                         onClick={(e) => setSex(e.target.value)} />
                     <label htmlFor="sex-input-other">Other</label>
                 </div>
@@ -130,6 +133,7 @@ const AddContact = ({ setUserFormVisible, contacts, setContacts }) => {
                     <span className="color-choice" onClick={(e) => setAvatarColor(e.target.id)} id={avatarColors[3]} style={{ backgroundColor: avatarColors[3] }}></span>
                     <span className="color-choice" onClick={(e) => setAvatarColor(e.target.id)} id={avatarColors[4]} style={{ backgroundColor: avatarColors[4] }}></span>
                     <span className="color-choice" onClick={(e) => setAvatarColor(e.target.id)} id={avatarColors[5]} style={{ backgroundColor: avatarColors[5] }}></span>
+                    {colorAlert && <small className="color-alert">Color Changed</small>}
                 </div>
                 <div className="buttons-container">
                     <Button buttonText={'Add'} type={'submit'} className={'add-btn btn'} setUserFormVisible={setUserFormVisible} onClick={handleSubmit} />

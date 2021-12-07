@@ -1,3 +1,7 @@
+body {
+  background: -webkit-radial-gradient(rgb(142, 201, 255), rgb(255, 255, 255));
+  background: radial-gradient(rgb(142, 201, 255), rgb(255, 255, 255));
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -5,6 +9,8 @@
   max-width: 1200px;
   min-height: 100vh;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  background-color: aliceblue;
 }
 .active {
   color: #666 !important;
@@ -19,15 +25,23 @@
   padding: 10px 20px;
   /* padding-right: 10px; */
   outline: none;
-  border: 1px solid #ccc;
-  background-color: rgb(203, 251, 222);
-  color: #666;
+  border: none;
+  background-color: tomato;
+  opacity: 0.7;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: opacity 0.2s ease;
   text-transform: uppercase;
 }
 .btn:hover {
-  border-color: #666;
+  opacity: 1;
+  justify-content: flex-end;
+}
+.btn:hover svg {
+  transition: transform 0.2s ease;
+}
+.btn:hover svg {
+  transform: scale(1.3);
 }
 .buttons-container {
   text-align: center;
@@ -44,6 +58,7 @@
   font-size: 1.4rem;
   color: #666;
   background-color: white;
+  border: 1px solid #b1b1b1;
 }
 /* icons */
 .header-icon {
@@ -61,11 +76,12 @@
 .close-icon {
   font-size: 1.6rem;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: color transform 0.2s ease;
 }
 .close-icon:hover {
-  opacity: 0.6;
-  color: crimson;
+  opacity: 0.8;
+  color: tomato;
+  transform: scale(1.2);
 }
 .add-contact-avatar {
   top: 5px;
@@ -88,6 +104,7 @@
 .icon-thread input[type="radio"]:checked + label {
   color: #666;
 }
+
 .contact-type-container {
   display: flex;
 }
@@ -101,27 +118,37 @@
   border-radius: 50%;
   margin: 5px;
   border: 1px solid #ccc;
-  cursor: pointer;
   width: 50px;
   height: 50px;
   transition: border-color, color 0.2s ease;
 }
-.contact-type:hover {
-  color: #666;
-  border-color: #666;
-}
+
 .contact-type-icon {
   font-size: 2rem;
+  color: #666;
+}
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-type:hover .contact-icon {
   color: #666;
 }
 /* header */
 header {
   font-size: 1rem;
+  letter-spacing: 5px;
   text-transform: uppercase;
   text-align: center;
   padding: 20px;
-  background-color: bisque;
-  border-bottom: 1px solid #666;
+  border-bottom: 5px solid tomato;
+  background-color: #1687ed;
+  color: #fff;
+  background: url("./assets/shattered-island.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header-title {
   display: flex;
@@ -144,7 +171,7 @@ header {
   color: #666;
   letter-spacing: 2px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   transition: border-color 0.2s ease;
 }
 #search-input::-webkit-input-placeholder {
@@ -152,10 +179,10 @@ header {
   color: #ccc;
 }
 #search-input:hover {
-  border-color: #666;
+  border-color: tomato;
 }
 #search-input:focus {
-  border-color: #666;
+  border-color: tomato;
 }
 .no-contacts-div {
   letter-spacing: 1px;
@@ -179,7 +206,8 @@ header {
   margin: 0 auto;
   width: 50%;
   padding: 20px;
-  background-color: #eee;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .add-contact-form input {
   font-size: 1.2rem;
@@ -192,11 +220,15 @@ header {
   letter-spacing: 2px;
 }
 .add-contact-form input:focus {
-  border-color: #666;
+  border-color: tomato;
 }
 input[type="number"] {
   background-color: white;
 }
+input[type="radio"] {
+  cursor: pointer;
+}
+
 .sex-container {
   margin-top: 20px;
 }
@@ -204,6 +236,7 @@ input[type="number"] {
   margin: 0 10px;
 }
 .color-choice-container {
+  position: relative;
   display: flex;
   margin: 40px 0;
 }
@@ -218,6 +251,13 @@ input[type="number"] {
 }
 .color-choice:hover {
   transform: scale(1.1);
+}
+.color-alert {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
 }
 /* contact list */
 .total-contacts {
@@ -243,24 +283,35 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 25px;
-  background-color: #eee;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 .table-header {
-  background-color: #ffffff;
+  background-color: transparent;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #1687ed;
   padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 .table-header .col-2 {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .table-header .col-3 {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+.table-row {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  border-left: 5px solid tomato;
+}
+.table-row:hover {
+  padding: 2;
 }
 .li-icons-container {
   display: flex;
@@ -297,8 +348,7 @@ li {
 /* footer */
 footer {
   width: 100%;
-  padding: 60px;
-  padding-bottom: 20px;
+  padding: 20px;
   letter-spacing: 1px;
   color: #666;
   text-align: center;
@@ -308,7 +358,7 @@ footer a {
   text-decoration: none;
 }
 footer a:hover {
-  color: black;
+  color: tomato;
 }
 @media (max-width: 900px) {
   .search-input-form {
@@ -323,6 +373,10 @@ footer a:hover {
     padding: 10px;
     width: 100%;
     font-size: 1.2rem;
+    justify-content: center;
+  }
+  .add-contact-btn:hover {
+    justify-content: center;
   }
   .add-contact-form {
     width: 100%;
