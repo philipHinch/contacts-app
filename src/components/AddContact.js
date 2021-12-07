@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.development";
 import Button from "../UI/Button";
 
 const avatarColors = ['crimson', 'steelblue', 'hotpink', 'rebeccapurple', 'forestgreen', 'goldenrod']
