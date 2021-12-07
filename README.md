@@ -1,6 +1,6 @@
 # Contacts App
 
-This is a personal *React* project focused on form handling and controlled inputs.
+This is a personal **React** project focused on form handling and controlled inputs.
 
 This app is fully responsive.
 
