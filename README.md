@@ -2,6 +2,8 @@
 
 This is a personal **React** project focused on form handling and controlled inputs.
 
+Contacts App will allow you to store your contacts information and will also allow you to filter through them when searching for a specific contact.
+
 This app is fully responsive.
 
 ---
