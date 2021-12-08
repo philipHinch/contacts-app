@@ -381,11 +381,23 @@ footer a:hover {
   .add-contact-form {
     width: 100%;
   }
-  .table-header {
-    display: none;
+
+  .table-header .col-2 {
+    font-size: 0.8rem;
+  }
+  .table-header .col-3 {
+    font-size: 0.8rem;
   }
   li {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .table-header {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    color: #666;
   }
   .col {
     flex-basis: 100%;
@@ -395,6 +407,21 @@ footer a:hover {
     justify-content: center;
     padding: 10px;
     font-size: 1.1rem;
+  }
+  .table-header .col-1 {
+    display: none;
+  }
+  .table-header .col-4 {
+    display: none;
+  }
+  .table-header .col-5 {
+    display: none;
+  }
+  .table-header .col-6 {
+    display: none;
+  }
+  .table-header .col-7 {
+    display: none;
   }
 }
 @media (max-width: 400px) {
