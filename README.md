@@ -31,6 +31,8 @@ In the project directory, you can run:
 
 ![This is an image](./src/assets/preview1.png)
 
+Not my actual contacts :smile:
+
 ---
 
 
