@@ -4,6 +4,8 @@ This is a personal **React** project focused on form handling and controlled inp
 
 Contacts App will allow you to store your contact's information, it will also allow you to filter through them when searching for a specific contact and it will also allow you to sort the contacts when clicking on the sort arrows.
 
+I used useEffect and useState for state management. 
+
 This app is fully responsive.
 
 ---
