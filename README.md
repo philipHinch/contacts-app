@@ -25,9 +25,17 @@ Technologies used:
 
 ---
 
-In the project directory, you can run:
+### Install Dependencies
 
-### `npm start`
+```
+npm install
+```
+
+### Run
+
+```
+npm start
+```
 
 ---
 
