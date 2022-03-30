@@ -8,7 +8,7 @@ I used useEffect and useState for state management.
 
 This app is fully responsive.
 
-https://raw.githubusercontent.com/philipHinch/underline/main/underline.png
+![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
 Technologies used:
 
@@ -24,7 +24,7 @@ Technologies used:
 
 [View Project](https://my-contacts-appp.herokuapp.com/)
 
-https://raw.githubusercontent.com/philipHinch/underline/main/underline.png
+![This is an image](https://raw.githubusercontent.com/philipHinch/underline/main/underline.png)
 
 ### Install Dependencies
 
